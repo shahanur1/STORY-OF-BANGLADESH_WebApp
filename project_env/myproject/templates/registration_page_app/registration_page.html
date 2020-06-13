@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <style>body {background-color: powderblue;}</style> -->
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				
+				<form action="registration_page" method="POST">
+					{% csrf_token %}
+					<h3>Create New Account?</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" name="first_name" placeholder="First Name">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="text" class="form-control" name="last_name" placeholder="Last Name">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<input type="text" class="form-control" name="username" placeholder="User Name">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<input type="email" class="form-control" name="email" placeholder="Mail">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" name="password1" placeholder="Password">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+					</div>
+					<button type="submit">
+						<span>Register</span>
+					</button>
+                </form>
+                
+                <div>
+                    {% for message in messages %}
+                    <h3>{{message}}</h3>
+                    {% endfor %}
+                </div>
+
+				
+			</div>
+
+		</div>
+
+	</body>
+</html>
